@@ -3,21 +3,20 @@ import { Container, Grid } from "@mui/material";
 import Character from "./Character";
 import axios from 'axios'
 
-export default function Characters() {
+export default function Characters(props) {
   const[character, setCharacter]=useState([])
-  const [image, setImage]=useState("")
-  const [name,setName]=useState("")
+
   
   
   useEffect(()=>{
     async function fetchData(){
-      const result= await axios.get (`https://rickandmortyapi.com/api/character?page=1`);
-      console.log(result)
+      const result= await axios.get (`https://rickandmortyapi.com/api/character?page=${props.page}`);
+      // console.log(result)
       setCharacter(result.data.results)
 
     }
     fetchData() ;
-  },[]);
+  },[props.page]);
 
 
 
