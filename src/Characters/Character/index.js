@@ -7,7 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
-export default function Character() {
+export default function Character(props) {
+  console.log(props)
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -15,11 +16,11 @@ export default function Character() {
           component='img'
           alt='green iguana'
           height='140'
-          image='/static/images/cards/contemplative-reptile.jpg'
+          image={props.image}
         />
         <CardContent>
           <Typography gutterBottom variant='h5' component='div'>
-            Lizard
+            {props.name}
           </Typography>
           <Typography variant='body2' color='text.secondary'>
             Lizards are a widespread group of squamate reptiles, with over 6,000
