@@ -18,7 +18,7 @@ export default function SingleCharacter(props){
     const [singleCharacter, setSingleCharacter]=useState({})
     
 
-    // ${props.character.id}
+    
     console.log("i miei",props.character)
     let {id} = useParams();
    

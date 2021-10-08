@@ -20,17 +20,6 @@ function App() {
   const [maxPage, setMaxPage] =useState(0)
   const[character, setCharacter]=useState([])
 
-  // useEffect(()=>{
-  //   async function fetchData(){
-  //     const result= await axios.get (`https://rickandmortyapi.com/api/character?page=${page}`);
-  //     console.log(result.data.results)
-  //     if (result.status===200)  {
-  //       setCharacter(result.data.results)
-  //     setMaxPage(result.data.info.pages)}
-
-  //   }
-  //   fetchData() ;
-  // },[page]);
 
 
 
