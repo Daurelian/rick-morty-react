@@ -16,7 +16,7 @@ export default function Navigation(props) {
     <Container fixed sx={{ mt: 4 }}>
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <Button disabled={props.page<=1? true: false} onClick={()=>props.setPage(props.page-1)} variant='contained' startIcon={<NavigateBeforeIcon />}>
+          <Button disabled={props.page<=1} onClick={()=>props.setPage(props.page-1)} variant='contained' startIcon={<NavigateBeforeIcon />}>
             Previous
           </Button>
         </Grid>
