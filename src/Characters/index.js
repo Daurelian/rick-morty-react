@@ -12,7 +12,9 @@ export default function Characters(props) {
     async function fetchData(){
       const result= await axios.get (`https://rickandmortyapi.com/api/character?page=${props.page}`);
       // console.log(result)
-      result.status===200 && setCharacter(result.data.results)
+      if (result.status===200)  {
+        setCharacter(result.data.results)
+      props.setMaxPage(result.data.info.pages)}
 
     }
     fetchData() ;
