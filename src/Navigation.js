@@ -6,28 +6,30 @@ import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import Badge from "@mui/material/Badge";
 
-
 export default function Navigation(props) {
-
-  
-
-
   return (
     <Container fixed sx={{ mt: 4 }}>
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <Button disabled={props.page<=1} onClick={()=>props.setPage(props.page-1)} variant='contained' startIcon={<NavigateBeforeIcon />}>
+          <Button
+            disabled={props.page <= 1}
+            onClick={() => props.setPage(props.page - 1)}
+            variant="contained"
+            startIcon={<NavigateBeforeIcon />}
+          >
             Previous
           </Button>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex" }}>
-          <Badge badgeContent={props.page} sx={{ mx: "auto" }} color='primary'>
-            <InsertDriveFileIcon color='action' />
+          <Badge badgeContent={props.page} sx={{ mx: "auto" }} color="primary">
+            <InsertDriveFileIcon color="action" />
           </Badge>
         </Grid>
         <Grid item xs={4} sx={{ display: "flex" }}>
-          <Button disabled={props.page===props.maxPage} onClick={()=>props.setPage(props.page+1)}
-            variant='contained'
+          <Button
+            disabled={props.page === props.maxPage}
+            onClick={() => props.setPage(props.page + 1)}
+            variant="contained"
             endIcon={<NavigateNextIcon />}
             sx={{ ml: "auto" }}
           >
