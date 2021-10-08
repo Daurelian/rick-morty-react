@@ -36,7 +36,7 @@ export default function Character(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small'><Link to="/singleCharacter">Learn More </Link></Button>
+        <Button size='small'><Link to={`${props.id}`}>Learn More </Link></Button>
       </CardActions>
     </Card>
     
