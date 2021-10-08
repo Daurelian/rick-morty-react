@@ -23,7 +23,7 @@ export default function Characters(props) {
   return (
     <Container fixed sx={{ mt: 4 }}>
       <Grid container spacing={2}>
-      {character.map((character)=>( <Grid item xs={3}>
+      {character.map((character)=>( <Grid item xs={3} key={character.id}>
           <Character image={character.image} name={character.name}/>
         </Grid>))}
         
