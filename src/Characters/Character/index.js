@@ -6,10 +6,17 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 export default function Character(props) {
   // console.log(props)
   return (
+    
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
@@ -29,8 +36,9 @@ export default function Character(props) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size='small'>Learn More</Button>
+        <Button size='small'><Link to="/singleCharacter">Learn More </Link></Button>
       </CardActions>
     </Card>
+    
   );
 }
