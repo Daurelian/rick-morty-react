@@ -18,6 +18,20 @@ export default function Characters(props) {
     fetchData();
   }, [props.page]);
 
+  useEffect(() => {
+    async function fetchData() {
+      const result = await axios.get(
+        `https://rickandmortyapi.com/api/character/?name=${props.searchWord}`
+      );
+      // console.log(result.data.results);
+      if (result.status === 200) {
+        props.setCharacter(result.data.results);
+        props.setMaxPage(result.data.info.pages);
+      }
+    }
+    fetchData();
+  }, [props.searchWord]);
+
   return (
     <Container fixed sx={{ mt: 4 }}>
       <Grid container spacing={2}>

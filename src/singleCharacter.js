@@ -11,6 +11,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link,
   useParams,
 } from "react-router-dom";
 
@@ -36,7 +37,11 @@ export default function SingleCharacter(props) {
   }, []);
 
   return (
+ 
     <Card sx={{ maxWidth: 600 }}>
+         <Button size="small">
+          <Link to="">Torna Indietro </Link>
+        </Button>
       <CardActionArea>
         <CardMedia
           component="img"

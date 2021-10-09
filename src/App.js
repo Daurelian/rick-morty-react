@@ -12,21 +12,23 @@ import {
 import React, { useState, useEffect } from "react";
 import Navigation from "./Navigation";
 import SingleCharacter from "./singleCharacter";
-// import { Router } from "@mui/icons-material";
+import Search from "./Search"
 
 function App() {
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(0);
   const [character, setCharacter] = useState([]);
+  const [searchWord, setSearchWord]= useState("");
 
   return (
     <Router>
       <div className="App">
         <Switch>
           <Route path="/:id">
-            <SingleCharacter character={character} />
+            <SingleCharacter character={character}/>
           </Route>
           <Route path="">
+          <Search searchWord={searchWord} setSearchWord={setSearchWord}/>
             <Navigation page={page} setPage={setPage} maxPage={maxPage} />
             <Characters
               page={page}
@@ -34,6 +36,8 @@ function App() {
               setMaxPage={setMaxPage}
               character={character}
               setCharacter={setCharacter}
+              searchWord={searchWord}
+              setSearchWord={setSearchWord}
             />
           </Route>
         </Switch>
