@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import Character from "./Character";
 import axios from "axios";
@@ -19,18 +19,21 @@ export default function Characters(props) {
   }, [props.page]);
 
   useEffect(() => {
-    async function fetchData() {
-      const result = await axios.get(
-        `https://rickandmortyapi.com/api/character/?name=${props.searchWord}&status=${props.status}`
-      );
-      // console.log(result.data.results);
-      if (result.status === 200) {
-        props.setCharacter(result.data.results);
-        props.setMaxPage(result.data.info.pages);
+    if (props.status === undefined) return;
+    else {
+      async function fetchData() {
+        const result = await axios.get(
+          `https://rickandmortyapi.com/api/character/?name=${props.searchWord}&status=${props.status}`
+        );
+        // console.log(result.data.results);
+        if (result.status === 200) {
+          props.setCharacter(result.data.results);
+          props.setMaxPage(result.data.info.pages);
+        }
       }
+      fetchData();
     }
-    fetchData();
-  }, [props.searchWord,props.status]);
+  }, [props.searchWord, props.status]);
 
   return (
     <Container fixed sx={{ mt: 4 }}>

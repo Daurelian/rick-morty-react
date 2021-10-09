@@ -7,13 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function SingleCharacter(props) {
   const [singleCharacter, setSingleCharacter] = useState({});
@@ -37,11 +31,10 @@ export default function SingleCharacter(props) {
   }, []);
 
   return (
- 
     <Card sx={{ maxWidth: 600 }}>
-         <Button size="small">
-          <Link to="">Torna Indietro </Link>
-        </Button>
+      <Button onClick={props.setStatus(undefined)} size="small">
+        <Link to="">Torna Indietro </Link>
+      </Button>
       <CardActionArea>
         <CardMedia
           component="img"
