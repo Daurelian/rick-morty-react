@@ -19,6 +19,7 @@ function App() {
   const [maxPage, setMaxPage] = useState(0);
   const [character, setCharacter] = useState([]);
   const [searchWord, setSearchWord]= useState("");
+  const [status, setStatus]= useState("Alive")
 
   return (
     <Router>
@@ -28,7 +29,7 @@ function App() {
             <SingleCharacter character={character}/>
           </Route>
           <Route path="">
-          <Search searchWord={searchWord} setSearchWord={setSearchWord}/>
+          <Search searchWord={searchWord} setSearchWord={setSearchWord} status={status} setStatus={setStatus}/>
             <Navigation page={page} setPage={setPage} maxPage={maxPage} />
             <Characters
               page={page}
@@ -37,7 +38,7 @@ function App() {
               character={character}
               setCharacter={setCharacter}
               searchWord={searchWord}
-              setSearchWord={setSearchWord}
+              status={status}
             />
           </Route>
         </Switch>

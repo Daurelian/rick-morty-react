@@ -21,7 +21,7 @@ export default function Characters(props) {
   useEffect(() => {
     async function fetchData() {
       const result = await axios.get(
-        `https://rickandmortyapi.com/api/character/?name=${props.searchWord}`
+        `https://rickandmortyapi.com/api/character/?name=${props.searchWord}&status=${props.status}`
       );
       // console.log(result.data.results);
       if (result.status === 200) {
@@ -30,7 +30,7 @@ export default function Characters(props) {
       }
     }
     fetchData();
-  }, [props.searchWord]);
+  }, [props.searchWord,props.status]);
 
   return (
     <Container fixed sx={{ mt: 4 }}>
