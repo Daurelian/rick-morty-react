@@ -4,6 +4,7 @@ import Character from "./Character";
 import axios from "axios";
 
 export default function Characters(props) {
+  //-----------------Cambio Pagina
   useEffect(() => {
     async function fetchData() {
       const result = await axios.get(
@@ -18,6 +19,7 @@ export default function Characters(props) {
     fetchData();
   }, [props.page]);
 
+  //---------------------Ricerca
   useEffect(() => {
     if (props.status === undefined) return;
     else {

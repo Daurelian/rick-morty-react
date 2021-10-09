@@ -32,7 +32,7 @@ export default function SingleCharacter(props) {
 
   return (
     <Card sx={{ maxWidth: 600 }}>
-      <Button onClick={props.setStatus(undefined)} size="small">
+      <Button  size="small">
         <Link to="">Torna Indietro </Link>
       </Button>
       <CardActionArea>
