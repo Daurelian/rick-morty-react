@@ -9,7 +9,6 @@ export default function Search(props) {
     return;
   }
 
-  console.log("status:", props.status);
   return (
     <>
       <fieldset id="searchbar-input">
